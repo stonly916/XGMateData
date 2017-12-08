@@ -1,6 +1,8 @@
 # XGMateData
 配对数组：用于将对象配对到对应下标位置
 
+下标不需要连贯使用，
+
 <pre><code>
     NSArray *bottomBtnArr = @[@"标的详情",@"赎回记录",@"赎回",@"赎走",@"加息"];
  
@@ -65,5 +67,13 @@
             
         }
         [self initMoneyBoxFooterView:moneyBoxFooterData];
+    }
+    //快速遍历
+    - (void)initBottomView:(XGMateData *)mateData
+    {
+        for (NSString *indexStr in mateData.allIndexs) {
+            NSUInteger index = indexStr.integerValue;
+            NSString *value = mateData[index];
+        }
     }
    </code></pre>
